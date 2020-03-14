@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo(NexT主题) + Github 搭建BLOG</title>
+    <url>/2020/03/14/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
+    <content><![CDATA[<p class="description"></p>
+
+<a id="more"></a>
+
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><blockquote>
+<p>macOS High Sierra 10.13.6<br>node.js 6.4.0<br>git 2.17.2</p>
+</blockquote>
+<blockquote>
+<p>hexo由node.js开发，所以要安装hexo需要node.js环境。由于已经环境中已有node.js和git，此处不再介绍其安装过程。</p>
+</blockquote>
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>在<a href="https://github.com/">Github</a>上新建仓库(repository)，仓库名称格式为:Github用户名.github.io。<br><img src="/images/github_repo.png" alt=""></p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
+<li><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>执行完以上指令，会在folder中创建hexo项目目录和文件。</p>
+</li>
+<li><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="/images/project_structure.jpg" alt=""></p>
+<ul>
+<li>_config.yml<br>全局配置文件(不同于主题中的_config.yml)，用于配置项目的基本参数。</li>
+<li>scraffolds<br>脚手架目录，用于配置创建文章时的结构内容。</li>
+<li>source<br>用于保存文章和页面，其中的_post用于存放文章文件。</li>
+<li>themes<br>主题目录，其中每个目录即使一个主题，默认主题为landscape。</li>
+<li>package.json<br>框架的参数和依赖插件。</li>
+</ul>
+</li>
+<li><h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;post-name&quot;</span><br></pre></td></tr></table></figure>
+<p>执行以上指令，会在source/_posts中创建post-name.md文章文件，编辑该文件即可编辑文章。</p>
+</li>
+</ul>
+<ul>
+<li><h2 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page &quot;page-name&quot;</span><br></pre></td></tr></table></figure>
+<p>执行以上指令，会在/source中创建page-name目录，并在目录中创建index.md文件.可以在指令中使用–path来指定文件名称。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page --path about&#x2F;me</span><br></pre></td></tr></table></figure>
+<p>执行以上指令，会在/source中创建about目录，并在/source/about中创建me.md文件。</p>
+</li>
+<li><h2 id="发布项目"><a href="#发布项目" class="headerlink" title="发布项目"></a>发布项目</h2><ul>
+<li><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3>在项目配置文件_config.yml中找到deploy配置项，修改如下:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;whichouno&#x2F;whichouno.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="发布项目-1"><a href="#发布项目-1" class="headerlink" title="发布项目"></a>发布项目</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+执行以上指令，会把本地的hexo项目发布到Github的whichouno.github.io仓库。</li>
+</ul>
+</li>
+<li><h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>执行以上指令，生成静态网页。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>执行以上指令，启动服务器。</p>
+</li>
+<li><h2 id="预览项目"><a href="#预览项目" class="headerlink" title="预览项目"></a>预览项目</h2><p>本地浏览器输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>访问项目。</p>
+</li>
+</ul>
+<h1 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h1><ul>
+<li><h2 id="安装NexT"><a href="#安装NexT" class="headerlink" title="安装NexT"></a>安装NexT</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
+执行以上指令，会在/themes目录下安装next主题。</li>
+<li><h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2>在项目配置文件_config.yml，找到theme配置项，修改如下:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="指令说明"><a href="#指令说明" class="headerlink" title="指令说明"></a>指令说明</h1><ul>
+<li><h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2>清除缓存文件(db.json)和已生成的静态文件(public)。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2>生成静态文件，简写g。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2>启动服务器，简写s。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2>部署网站，简写d。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2>显示Hexo版本。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2>列出网站资料。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo list</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2>清空缓存，生成静态文件并启动服务器。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+清空缓存，生成静态文件并部署。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+清空缓存，生成静态文件后启动服务器。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo s -g</span><br></pre></td></tr></table></figure>
+清空缓存，生成静态文件后部署。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo d -g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h1><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1>]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/03/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -22,313 +107,7 @@
   </entry>
   <entry>
     <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2018/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2010/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2011/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2012/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2013/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2014/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2015/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2016/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%2017/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
     <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%202/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%203/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%204/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%205/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%206/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%207/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%208/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC%209/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
     <content><![CDATA[<p class="description"></p>
 
 <a id="more"></a>
