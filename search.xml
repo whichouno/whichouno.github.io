@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/03/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>iOS 13适配小记</title>
+    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0/</url>
+    <content><![CDATA[<p class="description"></p>
+
+<a id="more"></a>
+
+<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS 13</tag>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+</search>
