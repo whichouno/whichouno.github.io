@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo(NexT主题) + Github 搭建BLOG</title>
-    <url>/2020/03/14/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
+    <url>/2020/03/14/Hexo(NexT%E4%B8%BB%E9%A2%98)%20+%20Github%20%E6%90%AD%E5%BB%BABLOG/</url>
     <content><![CDATA[<p class="description"></p>
 
 <a id="more"></a>
@@ -106,9 +106,6 @@
       <categories>
         <category>Web</category>
       </categories>
-      <tags>
-        <tag>1</tag>
-      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -129,22 +126,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>iOS 13适配小记</title>
-    <url>/2019/09/29/iOS-13%E9%80%82%E9%85%8D%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<p class="description"></p>
-
-<a id="more"></a>
-
-<h3 id="一、模态跳转适配"><a href="#一、模态跳转适配" class="headerlink" title="一、模态跳转适配"></a>一、模态跳转适配</h3><h3 id="二、暗黑模式适配"><a href="#二、暗黑模式适配" class="headerlink" title="二、暗黑模式适配"></a>二、暗黑模式适配</h3><h3 id="三、UITabbar选中颜色调整"><a href="#三、UITabbar选中颜色调整" class="headerlink" title="三、UITabbar选中颜色调整"></a>三、UITabbar选中颜色调整</h3><h3 id="四、KVC设置私有属性适配"><a href="#四、KVC设置私有属性适配" class="headerlink" title="四、KVC设置私有属性适配"></a>四、KVC设置私有属性适配</h3><h3 id="五、DeviceToken获取方式适配"><a href="#五、DeviceToken获取方式适配" class="headerlink" title="五、DeviceToken获取方式适配"></a>五、DeviceToken获取方式适配</h3><h3 id="六、状态栏适配"><a href="#六、状态栏适配" class="headerlink" title="六、状态栏适配"></a>六、状态栏适配</h3><hr />
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS 13</tag>
-        <tag>Xcode</tag>
-      </tags>
   </entry>
 </search>
